@@ -14,6 +14,7 @@ plugins: [jekyll-paginate]
 # Details for the RSS feed generator
 url: ""
 author: "Tom Roggero"
+author_bio: "Idealist, programmer, occasional runner."
 
 # Disqus config
 disqus-shortname: ""
