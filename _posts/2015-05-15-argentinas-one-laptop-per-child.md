@@ -9,12 +9,12 @@ A little bit of background here: [Conectar Igualdad](http://www.conectarigualdad
 
 The topic started after [an article](http://www.lanacion.com.ar/1757467-desconectar-igualdad-un-programa-que-inspiro-elogios-pero-hoy-recibe-criticas) titled (literal translation): _“(Dis)connecting equality, a program that inspired compliments but today receives indictments.”_
 
-######TL;DR
+###### TL;DR
 * About 1.2 to 1.6 million devices are out of service.
 * Teachers lack of knowledge and training.
 * Schools without enough infrastructure.
 
-#####Opinions
+##### Opinions
 
 **1) Maximiliano K.**
 > I have a first-hand experience to share:
