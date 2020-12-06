@@ -44,7 +44,9 @@ cover: false
         </section>
         <footer class="post-meta">
             {% if site.author %}
+                {% comment %}
                 <img class="author-thumb" src="{{'/assets/images/profile.png' | relative_url}}" alt="Author's profile picture" nopin="nopin" />
+                {% endcomment %}
                 {{ site.author }}
             {% endif %}
             {% if post.categories.size > 0 %} 
