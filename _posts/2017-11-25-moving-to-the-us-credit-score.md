@@ -27,7 +27,7 @@ All banks and similar entities report to bureaus (these are Equifax, Transunion 
 
 Your credit score will be composed by several factors, each having different weight on the final score, as follows:
 
-<img src="/assets/credit-score-composition.png" alt="FICO Credit Score Composition" style="max-width: 100%">
+<img src="/notes/assets/images/credit-score-composition.png" alt="FICO Credit Score Composition" style="max-width: 100%">
 
 * **35%** Paying History means paying on time, always. At least the minimum.
 * **30%** Credit Utilization refers to the amount you use from the amount you're allowed. A $500 statement on a $1,000 credit-limit card is using 50%. Ideally, you only use 10% of your limit (more on this below)
