@@ -73,6 +73,6 @@ I highly recommend signing up for [Credit Karma](https://www.creditkarma.com) to
 
 ## Other articles in this series
 
-* Housing in the US
-* 401k and savings accounts
-* Health/Dental/Vision/Pet coverage / insurance
+* [How to rent in NYC (or anywhere)](https://tomasroggero.com/notes/how-to-rent-in-nyc-or-anywhere)
+* _401k and savings accounts (coming soon)_
+* _Health/Dental/Vision/Pet coverage / insurance (coming soon)_

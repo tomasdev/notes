@@ -7,13 +7,13 @@ permalink: "/how-to-rent-in-nyc-or-anywhere"
 
 *Second article of a series dedicated to moving to the US.*
 
-Whoah. Five years without writing here. In that time my wife and I moved across the Atlantic twice, from NYC to Munich and back. Also, COVID-19 happened.
+Whoah. Five years without writing here. In that time I got married. We moved across the Atlantic twice, from NYC to Munich and back. And we are expecting! Also, COVID-19 happened.
 
 I hope this article is useful for first time movers, but also for anyone overwhelmed with finding an apartment (or flat, if you're in the UK) to rent.
 
 I have come up with 3 rules to make the best out of the very stressful situation of finding your place to live, whether you're moving overseas or just _leaving the nest_ of your parents.
 
-It intentionally applies to the New York City housing market, but also to pretty much any big city in the world, whether that is London or Tokyo.
+It intentionally applies to the New York City housing market, but also to pretty much any big city in the world, whether that is London, Tokyo or Katmandu.
 
 ## The 3 rules to find an apartment or flat
 
@@ -47,10 +47,10 @@ Think of this case: you're moving to London for what in your mind are only two y
 
 ## What next?
 
-That's it. That is _really_ it. If your mind exploded in content with my advice, please share this to your friend that is about to move, or stressing about not finding an apartment.
+That's it. That is _really_ it. If your mind exploded in content with my advice, please share this to that friend of yours that is about to move, or stressing about not finding an apartment.
 
 ## Other articles in this series
 
 * [Moving to the US: Credit Score](https://tomasroggero.com/notes/moving-to-the-us-credit-score)
-* 401k and savings accounts
-* Health/Dental/Vision/Pet coverage / insurance
+* _401k and savings accounts (coming soon)_
+* _Health/Dental/Vision/Pet coverage / insurance (coming soon)_
