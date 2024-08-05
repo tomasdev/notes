@@ -1,0 +1,95 @@
+---
+layout:    post
+title:     "How to configure MariaDB for Photoprism in TrueNAS Scale vanilla"
+date:      2024-08-05 06:45:00
+permalink: "/truenas-scale-photoprism-mariadb-configuration"
+---
+
+did not work:
+```
+admin@britannia[~]$ k3s kubectl get service --all-namespaces
+WARN[0000] Unable to read /etc/rancher/k3s/k3s.yaml, please start server with --write-kubeconfig-mode to modify kube config permissions 
+error: error loading config file "/etc/rancher/k3s/k3s.yaml": open /etc/rancher/k3s/k3s.yaml: permission denied
+```
+
+/ui/apps
+Settings » Advanced Settings » Cluster DNS IP 172.17.0.10
+
+cat /etc/resolv.conf
+
+NEW CUSTOM APP
+image repository: mariadb
+image tag: latest
+environment variables:
+  - MARIADB_ROOT_PASSWORD
+  - MARIADB_USER
+  - MARIADB_PASSWORD
+  - MARIADB_DATABASE
+port forwarding: 3306 -> 9001 TCP
+host path volume for /data » mount to /config/databases
+memory backed volume /mnt/backed » 2gi
+volumes /mnt/volumes » volumes
+Enable Pod resource limits I put `2000m` (2 core) and `4Gi` (4 GB memory)
+
+
+/ui/system/shell
+admin@britannia[~]$ sudo k3s kubectl get namespace
+[sudo] password for admin: 
+NAME                     STATUS   AGE
+default                  Active   106d
+kube-system              Active   106d
+kube-public              Active   106d
+kube-node-lease          Active   106d
+openebs                  Active   106d
+ix-photoprism            Active   27d
+ix-nginx-proxy-manager   Active   27d
+ix-mariadb               Active   112m
+ix-python                Active   95m
+admin@britannia[~]$ sudo k3s kubectl get svc --namespace=ix-mariadb                  
+NAME               TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)         AGE
+mariadb-ix-chart   NodePort   172.17.187.38   <none>        3306:9001/TCP   112m
+admin@britannia[~]$ sudo k3s kubectl get ep mariadb-ix-chart --namespace=ix-mariadb
+NAME               ENDPOINTS         AGE
+mariadb-ix-chart   172.16.0.8:3306   113m
+admin@britannia[~]$ 
+
+
+NEW CUSTOM APP
+
+image repository: python
+image tag: 3.12-alpine
+container cmd command: /bin/sh
+container args: -c
+container args: while true; do echo hello; sleep 10; done
+host path volumes for your index.db 
+
+Shell into it:
+pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir sqlite3-to-mysql
+sqlite3mysql -h 172.16.0.8 -f /mnt/storage/index.db -d photoprism -u photoprism -p
+
+
+---
+edit photoprism app
+environment variables
+PHOTOPRISM_DATABASE_DRIVER: mysql
+PHOTOPRISM_DATABASE_NAME: photoprism
+PHOTOPRISM_DATABASE_SERVER: mariadb-ix-chart.ix-mariadb.svc.cluster.local
+PHOTOPRISM_DATABASE_USER: photoprism
+PHOTOPRISM_DATABASE_PASSWORD: N2x6@M!LT}SJ7o>;l3u+
+
+
+
+setup this in truenas scale admin shell:
+https://devops.stackexchange.com/questions/16043/error-error-loading-config-file-etc-rancher-k3s-k3s-yaml-open-etc-rancher
+
+I had tried in the app shell:
+```
+/ # ping mariadb-ix-chart.ix-mariadb
+ping: bad address 'mariadb-ix-chart.ix-mariadb'
+```
+
+but ping mariadb-ix-chart.ix-mariadb.svc.cluster.local works!
+
+
+acknowledgements: https://github.com/photoprism/photoprism/discussions/2795
+https://www.truenas.com/community/threads/inter-pod-network-communication.93399 (all pages)
