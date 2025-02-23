@@ -25,6 +25,7 @@ environment variables:
   - MARIADB_USER
   - MARIADB_PASSWORD
   - MARIADB_DATABASE
+  - DATADIR=/config/databases
 port forwarding: 3306 -> 9001 TCP
 host path volume for /data » mount to /config/databases
 memory backed volume /mnt/backed » 2gi
